@@ -18,6 +18,7 @@ public class Sort {
         String str = sc.nextLine();
         sc.close();
 
+        //TODO Where i list (or array) of strings?
         //TODO How can user specify order of sorting?
 
         String[] n = str.split(" ");
