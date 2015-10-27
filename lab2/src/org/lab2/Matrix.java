@@ -12,15 +12,15 @@ import java.util.Scanner;
 public class Matrix {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter rows and columns:");
+        System.out.println("Enter rows and columns:");  //TODO Message is not clear for understanding
         int n = in.nextInt();
         int m = in.nextInt();
         in.close();
         Random randomGenerator = new Random();
         int[][] mat = new int[n][m];
-        for (int i = 0; i < mat.length; ++i) {
-            for (int j = 0; j < mat[i].length; ++j) {
-                mat[i][j] = randomGenerator.nextInt(10);
+        for (int i = 0; i < mat.length; ++i) {  //TODO You known length of arrays
+            for (int j = 0; j < mat[i].length; ++j) {   //TODO Why do you use pre increment?
+                mat[i][j] = randomGenerator.nextInt(10);    //TODO It will be better to use number provided by user
             }
         }
         for (int i = 0; i < mat.length; ++i) {
@@ -37,5 +37,7 @@ public class Matrix {
             }
             System.out.println();
         }
+
+        //TODO Where is transposed  matrix?
     }
 }

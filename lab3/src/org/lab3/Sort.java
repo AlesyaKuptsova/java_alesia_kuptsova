@@ -12,10 +12,14 @@ import java.util.Scanner;
  */
 public class Sort {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter string:");
         String str = sc.nextLine();
         sc.close();
+
+        //TODO How can user specify order of sorting?
+
         String[] n = str.split(" ");
         Arrays.sort(n, new Comparator<String>() {
             @Override
@@ -33,7 +37,7 @@ public class Sort {
         int m = 0;
         for (int i = 0; i < s.length(); ++i) {
             if (vowels.indexOf(s.charAt(i)) != -1) {
-                m += 1;
+                m += 1; //TODO Use simple increment (m++)
             }
         }
         return m;

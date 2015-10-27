@@ -12,11 +12,11 @@ public class Calc {
         try {
             while (true) {
                 System.out.println("Enter first number:");
-                double n1 = sc.nextInt();
+                double n1 = sc.nextInt();   //TODO: nextDouble()
                 System.out.println("Enter a sign of operation:");
                 char op = sc.next().charAt(0);
                 System.out.println("Enter second number:");
-                double n2 = sc.nextInt();
+                double n2 = sc.nextInt(); //TODO: nextDouble()
                 try {
                     System.out.println("Result:" + Calc.metodClac(n1, op, n2));
                 } catch (RuntimeException e){
@@ -24,7 +24,7 @@ public class Calc {
                 }
             }
         } catch (NoSuchElementException e) {
-
+            //TODO: add print message
         }
         sc.close();
         System.out.println("exit");
