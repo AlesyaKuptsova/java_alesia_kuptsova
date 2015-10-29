@@ -47,7 +47,7 @@ public class Sort {
     private static int countVo(String s) {
         String vowels = "aeiouAEIOU";
         int m = 0;
-        for (int i = 0; i < s.length(); ++i) {
+        for (int i = 0; i < s.length(); i++) {
             if (vowels.indexOf(s.charAt(i)) != -1) {
                 m++;
             }
