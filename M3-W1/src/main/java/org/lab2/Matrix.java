@@ -2,7 +2,7 @@
 Transpose a matrix.
 */
 package org.lab2;
-import java.util.Random;
+
 import java.util.Scanner;
 
 /**
@@ -12,32 +12,34 @@ import java.util.Scanner;
 public class Matrix {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter rows and columns:");  //TODO Message is not clear for understanding
+        System.out.println("Enter the number of rows  of matrix:");
         int n = in.nextInt();
+        System.out.println("Enter the number of columns of matrix:");
         int m = in.nextInt();
-        in.close();
-        Random randomGenerator = new Random();
-        int[][] mat = new int[n][m];
-        for (int i = 0; i < mat.length; ++i) {  //TODO You known length of arrays
-            for (int j = 0; j < mat[i].length; ++j) {   //TODO Why do you use pre increment?
-                mat[i][j] = randomGenerator.nextInt(10);    //TODO It will be better to use number provided by user
-            }
-        }
-        for (int i = 0; i < mat.length; ++i) {
-            for (int j = 0; j < mat[i].length; ++j) {
-                System.out.print(mat[i][j] + " ");
-            }
-            System.out.println();
-        }
-        System.out.println("\n");
 
-        for (int i = 0; i < m; ++i) {
-            for (int j = 0; j < n; ++j) {
-                System.out.print(mat[j][i] + " ");
-            }
-            System.out.println();
+        int matrix[][] = new int[n][m];
+
+        System.out.println("Enter the elements of matrix:");
+
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < m; j++)
+                matrix[i][j] = in.nextInt();
+
+        int transpose[][] = new int[m][n];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++)
+                transpose[j][i] = matrix[i][j];
         }
 
-        //TODO Where is transposed  matrix?
+        System.out.println("Transpose of entered matrix:");
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++)
+                System.out.print(transpose[i][j] + "\t");
+            System.out.print("\n");
+        }
     }
 }
+
+
