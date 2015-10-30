@@ -24,7 +24,7 @@ public class Calc {
                 }
             }
         } catch (NoSuchElementException e) {
-            System.out.println("exit");
+            System.out.println("Error:"+e);
         }
         sc.close();
     }
