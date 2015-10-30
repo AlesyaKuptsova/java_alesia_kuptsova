@@ -15,20 +15,26 @@ public class Sort {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        //TODO: Add default value for order
         System.out.print("Enter sort order Ascending/descending [A/d]: ");
         String orderStr = sc.nextLine();
+        //TODO: Incorrect verification of order
         final boolean ascending = orderStr.isEmpty() || orderStr.charAt(0) != 'd';
         System.out.println("Enter strings:");
+        //TODO: Don't use Collections
         ArrayList<String> strings = new ArrayList<String>();
         try {
+          //TODO: 4ever inputing
             while (true) {
                 String str = sc.nextLine();
                 strings.add(str);
             }
         } catch (Exception exc) {
+          //TODO empty message
         }
         sc.close();
 
+        //TODO Please don't use Collections.
         Collections.sort(strings, new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
