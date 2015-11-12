@@ -12,6 +12,8 @@ public class Main {
         TourManager manager = new TourManager();
         manager.addTour(new Cruise("cruise1", 100, 10, "DBL", "FB", "Zimbabwee"));
         manager.addTour(new Rest("rest1", 1000, 66, Transport.BUS, "super-hotel", 5, 100, true));
+        manager.addTour(new Rest("rest11", 1005, 66, Transport.BUS, "super-hotel", 5, 100, true));
+        manager.addTour(new Rest("rest111", 1001, 66, Transport.BUS, "super-hotel", 5, 100, true));
         manager.addTour(new Rest("rest2", 999, 10, Transport.PLANE, "super-mega-hotel", 5, 10, true));
         manager.addTour(new Shopping("shop1", 200, 3, Transport.BUS, "Phnom Penh", "super-store", 10));
         manager.addTour(new Cruise("cruse2", 150, 7, "SGL", "FB+", "Tallinn - Helsinki - Stockholm"));
@@ -21,6 +23,8 @@ public class Main {
             List<TourManager.Search> search = new ArrayList<TourManager.Search>();
             List<TourManager.Sort> sort = new ArrayList<TourManager.Sort>();
             while(true) {
+                //TODO please do menu more informative, e.g. add options to select
+                //TODO add printing current conditions and sorting
                 System.out.println("-------------------");
                 System.out.println("actions: ");
                 System.out.println("cond <name> <value> [op]");// Example: cond cost 100 <
@@ -31,19 +35,24 @@ public class Main {
                 System.out.println("-------------------");
                 String line = scanner.nextLine();
                 String[] words = line.split(" ");
+                //TODO Wrap all conditions / cycles with braces
                 if(words.length == 0)
                     continue;
+                //TODO Format braces according with Java Coding Standards
                 if(words[0].equals("quit"))
                 {
                     break;
                 }
+                //TODO Format braces according with Java Coding Standards
                 else if(words[0].equals("search"))
                 {
                     System.out.println("-------------------");
+                    //TODO Develop separate method for printing
                     for(Tour tour : manager.find(search, sort)) {
                         System.out.println(tour.toString());
                     }
                 }
+                //TODO Format braces according with Java Coding Standards
                 else if(words[0].equals("sort"))
                 {
                     if(words.length == 2) {
@@ -62,8 +71,11 @@ public class Main {
                             continue;
                         }
                         sort.add(new TourManager.Sort(field, true));
+                        //TODO Add message about completed action
                     }
+                    //TODO Add Error message if format is incorrect
                 }
+                //TODO Format braces according with Java Coding Standards
                 else if(words[0].equals("cond"))
                 {
                     try {
@@ -71,6 +83,7 @@ public class Main {
                             TourManager.Field field = TourManager.Field.NAME;
                             Object value = TourManager.Field.NAME;
                             int comparator = 0;
+                            //TODO You can use switch here
                             if(words[1].equals("name")) {
                                 field = TourManager.Field.NAME;
                                 value = words[2];
@@ -106,12 +119,16 @@ public class Main {
                                 }
                             }
                             search.add(new TourManager.Search(field, value, comparator));
+                            //TODO Add message about completed action
                         }
+                        //TODO Add Error message if format is incorrect
                     }
+                    //TODO Catch only expected type of exception here
                     catch(Exception exc) {
                         System.out.println(String.format("%s", exc.getMessage()));
                     }
                 }
+                //TODO Format braces according with Java Coding Standards
                 else if(words[0].equals("clear"))
                 {
                     search.clear();

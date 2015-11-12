@@ -7,12 +7,16 @@ import java.util.Random;
 
 public class ListsTest {
 
+    //TODO: NOTE: Для наглядности рекомендуется использовать от 7000+ элементов в коллекции
 	private static final int SIZE = 500;
 	private static final int MIN = 0;
 	private static final int MAX = 50;
 
 	public static Integer randInt(int min, int max) {
-		Random rand = new Random();
+
+        //TODO: Don't use random initializing of collection, we should compare the same data
+
+        Random rand = new Random();
 		Integer randomNum = (Integer) rand.nextInt((max - min) + 1) + min;
 		return randomNum;
 	}
@@ -43,6 +47,7 @@ public class ListsTest {
 
 	public static long removeFromCurrentPositionTime(List<String> list, int index){
 		long time = System.nanoTime();
+        //TODO IndexOutOfBoundsException
 		list.remove(index);
 		return System.nanoTime() - time;
 	}
@@ -60,6 +65,8 @@ public class ListsTest {
 	}
 	
 	public static void main(String[] args) {
+
+
 		
 		List<String> arrayList = new ArrayList<>();
 		List<String> linkedList = new LinkedList<>();
@@ -83,12 +90,16 @@ public class ListsTest {
 			subArrayList.add(elem);
 		}
 
-		System.out.println(addToEndTime(arrayList, toAdd));
+        //TODO: Compare adding also at the begging
+        //TODO: Compare adding Search / Delete for 3 elements in collection: at the begging, at the middle and at the end
+        //TODO Add more information about gotten numbers
+
+        System.out.println(addToEndTime(arrayList, toAdd));
 		System.out.println(addToMiddleTime(arrayList, toAdd));
 		System.out.println(addListToEndTime(arrayList, subArrayList));
 		System.out.println(addListToMiddleTime(arrayList, subArrayList));
         System.out.println("===================================");
-		System.out.println(removeFromCurrentPositionTime(arrayList, 2000));
+		System.out.println(removeFromCurrentPositionTime(arrayList, 200));
 		System.out.println(removeCurrentElementTime(arrayList, toAdd));
         System.out.println("===================================");
 		System.out.println(addToEndTime(linkedList, toAdd));

@@ -3,6 +3,7 @@ package epam.lab4;
 /**
  * Created by Alesia Kuptsova on 11/3/2015.
  */
+//TODO Add Tour to name of class
 public class Cruise extends BaseTour {
     private String roomType;
     private String foodType;

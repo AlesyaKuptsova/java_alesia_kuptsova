@@ -5,7 +5,8 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class MapTest {
-	
+
+	//TODO: NOTE: Для наглядности рекомендуется использовать от 7000+ элементов в коллекции
 	private static final int SIZE = 500;
 	
 	public static long addTime(Map<Integer, String> map,  Integer key, String value){

@@ -3,6 +3,7 @@ package epam.lab4;
 /**
  * Created by Alesia Kuptsova on 11/2/2015.
  */
+//TODO Add Tour to name of class
 public class Treatment extends BaseTour {
     private int proceduresAmount;
     private Transport transport;

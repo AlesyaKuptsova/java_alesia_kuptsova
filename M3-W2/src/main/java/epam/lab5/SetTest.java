@@ -6,6 +6,7 @@ import java.util.TreeSet;
 
 public class SetTest {
 
+	//TODO: NOTE: Для наглядности рекомендуется использовать от 7000+ элементов в коллекции
 	private static final int SIZE = 1000;
 
 	public static long addTime(Set<String> set, String element) {

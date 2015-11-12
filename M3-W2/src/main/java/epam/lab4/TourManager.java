@@ -62,12 +62,14 @@ public class TourManager {
                     default:
                         continue;
                 }
+                //TODO Format braces according with Java Coding Standards
                 if(compare != field.compare)
                 {
                     match = false;
                     break;
                 }
             }
+            //TODO Wrap all conditions / cycles with braces
             if(match)
                 result.add(tour);
         }
@@ -102,5 +104,6 @@ public class TourManager {
         return result;
     }
 
+    //TODO Keep all fields on the top of class
     private List<Tour> tours = new ArrayList<Tour>();
 }
