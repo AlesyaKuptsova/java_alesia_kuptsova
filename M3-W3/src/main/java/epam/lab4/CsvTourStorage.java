@@ -41,6 +41,8 @@ public class CsvTourStorage implements TourStorage {
                 if(values.length == 0)
                     throw new TourStorageException("invalid tour file");
                 String[] data = new String[values.length-1];
+
+                //TODO It will be better to use keys for values
                 for(int i =1; i < values.length; ++i) {
                     data[i-1] = values[i];
                 }

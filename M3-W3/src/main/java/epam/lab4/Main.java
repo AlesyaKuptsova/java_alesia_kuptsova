@@ -9,6 +9,7 @@ import java.util.ArrayList;
  */
 public class Main {
     public static void main(String[] args){
+
         TourManager manager = new TourManager(new CsvTourStorage("tours.csv"));
         manager.addTour(new Cruise("cruise1", 100, 10, "DBL", "FB", "Zimbabwee"));
         manager.addTour(new Rest("rest1", 1000, 66, Transport.BUS, "super-hotel", 5, 100, true));
@@ -129,6 +130,7 @@ public class Main {
                         search.clear();
                         sort.clear();
                     }
+                    //TODO please do more informative
                     else if(words[0].equals("add")) {
                         if(words.length <= 1)
                             throw new InputException(line, "invalid add command");
@@ -185,6 +187,7 @@ public class Main {
                     }
                 }
                 catch(InputException exc) {
+                    //TODO Formatting of message will be better do in exception
                     System.out.println(String.format("%s in '%s'", exc.getMessage(), exc.getInput()));
                 }
             }

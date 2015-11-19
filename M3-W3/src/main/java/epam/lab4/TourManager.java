@@ -59,6 +59,7 @@ public class TourManager {
     }
 
     public void addTour(Tour tour) {
+        //TODO Add tour to list only after adding to file
         tours.add(tour);
         try {
             storage.store(tours);
